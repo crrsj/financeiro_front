@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="./script.css">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Finanças</title>
+</head>
+<body>
+    <div class="container">
+    <div class="col-md-8 mx-auto rounded border p-4 m-4">
+
+    <center><h2 class="text-center mb-5">Cadastro de contas</h2></center>  
+      <form id="meuFormulario">
+        <div class="row mb-3">
+          <label for="id" class="col-sm-4 col-form-label">ID</label>
+          <div class="col-sm-8">
+           <input class="form-control" id="id" name="id" readonly>          
+          
+          </div>
+        </div>         
+        <div class="row mb-3">
+          <label for="mes" class="col-sm-4 col-form-label">Mes</label>
+           <div class="col-sm-8">
+             <select class="form-select" id="mes" name="mes" required>
+                <option value='JANEIRO'>Janeiro</option>
+                <option value='FEVEREIRO'>Fevereiro</option>
+                <option value='MARCO'>Março</option>
+                <option value='ABRIL'>Abril</option>
+                <option value='MAIO'>Maio</option>
+                <option value='JUNHO'>Junho</option>
+                <option value='JULHO'>Julho</option>
+                <option value='AGOSTO'>Agosto</option>
+                <option value='SETEMBRO'>Setembro</option>
+                <option value='OUTUBRO'>Outubro</option>
+                <option value='NOVEMBRO'>Novembro</option>
+                <option value='DEZEMBRO'>Dezembro</option>
+             </select>               
+           </div>
+         </div>
+         <div class="row mb-3">
+          <label for="ano" class="col-sm-4 col-form-label">Ano</label>
+          <div class="col-sm-8">
+           <input class="form-control" type="number" id="ano" name="ano" required>          
+          
+          </div>
+          </div>
+          <div class="row mb-3">
+            <label for="nome" class="col-sm-4 col-form-label">Nome</label>
+            <div class="col-sm-8">
+             <input class="form-control" id="nome" name="nome" required>          
+            
+            </div>
+          </div>     
+            
+          <div class="row mb-3">
+            <label for="dataCompra" class="col-sm-4 col-form-label">Data da compra</label>
+            <div class="col-sm-8">
+             <input class="form-control" id="dataCompra" name="dataCompra" required>          
+            
+            </div>
+            </div>
+            
+          <div class="row mb-3">
+            <label for="produtoOuFatura" class="col-sm-4 col-form-label">Produto/fatura</label>
+            <div class="col-sm-8">
+             <input class="form-control" id="produtoOuFatura" name="produtoOuFatura" required>          
+            
+            </div>
+          </div>    
+                     
+          <div class="row mb-3">
+           <label for="pagamento" class="col-sm-4 col-form-label">Pagamento</label>
+            <div class="col-sm-8">
+              <select class="form-select" id="pagamento" name="pagamento" required>
+                 <option value='CARTAO'>Cartão</option>
+                 <option value='BOLETO'>Boleto</option>
+                 <option value='PIX'>Pix</option>
+                 <option value='DINHEIRO'>Dinheiro</option>
+               
+              </select>               
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="cartao" class="col-sm-4 col-form-label">Cartão</label>
+           <div class="col-sm-8">
+           <input class="form-control" id="cartao" name="cartao" required>            
+        </div>
+      </div>            
+          <div class="row mb-3">
+            <label for="parcelas" class="col-sm-4 col-form-label">Parcelas</label>
+           <div class="col-sm-8">
+           <input class="form-control" id="parcelas" type="number" name="parcelas" required>            
+        </div>
+      </div>
+              <div class="row mb-3">
+               <label for="valor" class="col-sm-4 col-form-label">Valor R$:  </label>
+               <div class="col-sm-8">
+                <input id="valor" name="valor" type="number" class="form-control" required>         
+              </div>
+           </div>               
+         
+        <div class="row">
+          <div class ="offset-sm-4 col-sm-4 d-grid">
+           <button type="button" class="btn btn-primary" onclick=" validarFormulario()"> Enviar</button>
+           </div>
+            <div class="col-sm-4 d-grid">
+            <a class="btn btn-outline-primary" href="" role="button">Cancelar</a>
+          </div>
+         </div>                          
+         
+       </form>
+       </div>
+      </div>
+    <h1 class="text-center my-4">Contas</h1>       
+    <table class="table" id="tabela">
+ <thead>
+   <tr>
+     <th>ID</th>
+     <th>Data/hora</th>
+     <th>Mes</th>
+     <th>Ano</th>
+     <th>Nome</th>  
+     <th>Prod/fat</th>
+     <th>Data/compra</th>
+     <th>Pagamento</th>
+     <th>Cartao</th>
+     <th>Parcelas</th>
+     <th>Valor</th>     
+     <th>Detalhes</th> 
+     <th>Editar</th>    
+     <th>Excluir</th>    
+    
+   </tr>
+ </thead>
+ <tbody id="corpo-tabela" >
+
+ </tbody>
+</table>
+
+   </div>
+
+
+    <script src="./script.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
